@@ -1,0 +1,26 @@
+# Python / Virtualenv
+.venv/
+__pycache__/
+*.pyc
+
+# uv build cache
+.uv/
+.cache/
+*.egg-info/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Datenordner (lokal, nicht versionieren)
+data/raw/
+data/interim/
+data/processed/
+
+# Temporäre Dateien
+*.log
+*.tmp
+
+# MacOS / IDE
+.DS_Store
+.vscode/
+.idea/
