@@ -63,6 +63,7 @@ def process_csv_from_zip(zip_path: Path, filename: str, filter_real: bool = True
                     "DURCHFAHRT_TF": "boolean",
                     "AN_PROGNOSE_STATUS": "category",
                     "AB_PROGNOSE_STATUS": "category",
+                    "BPUIC": "string"
                 },
                 low_memory=False,
             )

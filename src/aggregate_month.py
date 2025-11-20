@@ -29,7 +29,7 @@ def combine_interim_files(month=MONTH):
     keep_cols = [
         "BETRIEBSTAG", "BETREIBER_NAME", "PRODUKT_ID", "LINIEN_TEXT",
         "HALTESTELLEN_NAME", "ANKUNFTSZEIT", "ABFAHRTSZEIT", "delay_arrival_s", "delay_departure_s",
-        "on_time", "FAELLT_AUS_TF"
+        "on_time", "FAELLT_AUS_TF", "BPUIC"
     ]
     df_all = df_all[[c for c in keep_cols if c in df_all.columns]]
 
