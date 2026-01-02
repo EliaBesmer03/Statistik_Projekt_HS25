@@ -213,6 +213,7 @@ Ab diesem Punkt wurden zentrale Teile der Notebooks neu aufgesetzt und die final
 - Basis-Modell vs. Interaktionsmodell (z.B. hour × weekday)
 - Modellvergleich via AIC/BIC
 - Multikollinearität (VIF)
+- Panelmodell mit Fixed Effects (Haltestellen-FE)
 - Interpretation der Effekte
 
 ---
