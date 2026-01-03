@@ -247,3 +247,23 @@ Unser Vorgehen war iterativ:
 - Über den Umstieg auf Parquet + Polars und die Scope-Entscheidung “Trains only” wurde das Projekt stabil.
 - Danach konnten wir die Vorlesungsinhalte (Deskriptiv, Inferenz, Hypothesentests, Regression) sauber auf einer konsistenten Datenbasis umsetzen.
 - Explorative Erweiterungen wie das Bahnhof-Mining (TA-Empfehlung) haben wir dokumentiert, auch wenn daraus in der Schweiz keine starken Unterschiede ableitbar waren.
+
+## 7. Table of Contribution
+
+### Detaillierte Aufgabenverteilung nach Notebooks
+
+| Notebook | Thema / Statistische Analyse | Teammitglieder |
+| :--- | :--- | :--- |
+| **N01_EDA.ipynb** | Data Engineering, Cleaning & Filterung (Trains only) | |
+| **N02.ipynb** | Deskriptive Statistik & Ausreißeranalyse (Tukey) | |
+| **N03.ipynb** | Korrelationsanalyse (Spearman) & Heatmaps | |
+| **N04.ipynb** | Wahrscheinlichkeitstheorie, ECDF & Law of Large Numbers | |
+| **N05.ipynb** | Inferenzstatistik: Konfidenzintervalle & Bootstrapping | |
+| **N06.ipynb** | Urban vs. Rural Analyse & Geo-Matching (BFS-Daten) | |
+| **N07.ipynb** | Hypothesentest Tageszeit (Kruskal-Wallis & Mann-Whitney) | |
+| **N08.ipynb** | Experimentelle Analysen (Chi²-Tests & OLS-Entwürfe) | |
+| **N09.ipynb** | A/B-Vergleich (Zürich vs. St. Gallen) & Effektgrößen | |
+| **N10.ipynb** | Lineare Regression (Transformationen & Diagnoseplots) | |
+| **N11.ipynb** | Multiple Regression, Interaktionseffekte & VIF-Check | |
+| **bahnhof-mining.ipynb** | Explorative Analyse der Bahnhof-Strukturen | |
+| **bahnhof-mining-hypothese.ipynb**| Prüfung der "Puffer-Hypothese" ($\Delta$ Delay Analyse) | |
