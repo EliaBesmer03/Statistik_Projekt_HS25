@@ -31,22 +31,20 @@ Statistik_Projekt_HS25-main/
 │     ├─ dienststellen.csv
 │     ├─ switzerland.geojson
 │     └─ Boundaries_K4_GDETYP2020_20240101_de.gpkg
-├─ notebooks/
-│  ├─ N01_EDA.ipynb
-│  ├─ N02.ipynb
-│  ├─ N03.ipynb
-│  ├─ N04.ipynb
-│  ├─ N05.ipynb
-│  ├─ N06.ipynb
-│  ├─ N07.ipynb
-│  ├─ N08.ipynb
-│  ├─ N09.ipynb
-│  ├─ N10.ipynb
-│  ├─ N11.ipynb
-│  ├─ bahnhof-mining.ipynb
-│  └─ bahnhof-mining-hypothese.ipynb
-└─ präsentation/
-   └─ presentation.tex
+└─ notebooks/
+   ├─ N01_EDA.ipynb
+   ├─ N02.ipynb
+   ├─ N03.ipynb
+   ├─ N04.ipynb
+   ├─ N05.ipynb
+   ├─ N06.ipynb
+   ├─ N07.ipynb
+   ├─ N08.ipynb
+   ├─ N09.ipynb
+   ├─ N10.ipynb
+   ├─ N11.ipynb
+   ├─ bahnhof-mining.ipynb
+   └─ bahnhof-mining-hypothese.ipynb
 ```
 ## 2.2 `src/` – Datenpipeline & Hilfsfunktionen
 
