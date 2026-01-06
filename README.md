@@ -4,13 +4,13 @@
 
 In diesem Projekt analysieren wir IST-Daten des öffentlichen Verkehrs aus dem **Open Transport Data**-Kontext (SBB/Open-Data-Feed). Unser Fokus liegt auf **Verspätungen** (Ankunft/Abfahrt) und darauf, ob sich diese systematisch durch Faktoren wie **Tageszeit**, **Wochentag**, **Station/Bahnhof** oder **Urbanität** unterscheiden lassen.  
 
-Neben der Statistik war ein zentraler Teil des Projekts die **technische Umsetzbarkeit**: Die Rohdaten sind sehr groß, weshalb wir eine robuste Datenpipeline und performante Tools (insb. Polars + Parquet) benötigt haben.
+Neben der Statistik war ein zentraler Teil des Projekts die **technische Umsetzbarkeit**: Die Rohdaten sind sehr gross, weshalb wir eine robuste Datenpipeline und performante Tools (insb. Polars + Parquet) benötigt haben.
 
 ---
 
 ## 2. Projektstruktur & Reproduzierbarkeit
 
-Damit das Projekt trotz sehr großer Rohdaten reproduzierbar und übersichtlich bleibt, ist das Repository klar in **Code (Pipeline)**, **Daten** und **Analysen (Notebooks)** getrennt.
+Damit das Projekt trotz sehr grosser Rohdaten reproduzierbar und übersichtlich bleibt, ist das Repository klar in **Code (Pipeline)**, **Daten** und **Analysen (Notebooks)** getrennt.
 
 ### 2.1 Ordnerstruktur
 
@@ -18,10 +18,8 @@ Damit das Projekt trotz sehr großer Rohdaten reproduzierbar und übersichtlich 
 Statistik_Projekt_HS25-main/
 ├─ .gitignore
 ├─ .python-version
-├─ pyproject.toml
 ├─ requirements.txt
 ├─ uv.lock
-├─ main.py
 ├─ src/
 │  ├─ io_zip_processing.py
 │  ├─ aggregate_month.py
@@ -48,7 +46,7 @@ Statistik_Projekt_HS25-main/
 ```
 ## 2.2 `src/` – Datenpipeline & Hilfsfunktionen
 
-In `src/` liegt die Logik, um aus großen Rohdaten handhabbare Analyse-Dateien zu erzeugen.
+In `src/` liegt die Logik, um aus grossen Rohdaten handhabbare Analyse-Dateien zu erzeugen.
 
 - **`src/io_zip_processing.py`**  
   Verarbeitet die heruntergeladenen **ZIP-Rohdaten** (Parsing/Extraktion) und schreibt strukturierte Zwischenstände als Parquet.
@@ -70,14 +68,14 @@ In `src/` liegt die Logik, um aus großen Rohdaten handhabbare Analyse-Dateien z
   - `Boundaries_...gpkg` (Gemeinde-/Boundary-Daten für Urban/Rural-Analysen)
 
 - **`data/raw/`, `data/interim/`, `data/processed/` (bewusst nicht im Repo)**  
-  Diese Ordner sind nicht versioniert (u.a. wegen Datengröße) und werden über `.gitignore` ausgeschlossen.
+  Diese Ordner sind nicht versioniert (u.a. wegen Datengrösse) und werden über `.gitignore` ausgeschlossen.
 
   Konzeptuell ist der Datenfluss wie folgt:
   - `data/raw/`: Rohdaten (z.B. heruntergeladene ZIP-Dateien)
   - `data/interim/`: Zwischenstände aus `io_zip_processing.py`
   - `data/processed/`: finale Analyse-Dateien (Parquet), z.B. Monatsdatei und bereinigte “Trains only”-Datei
 
-Diese Trennung erlaubt reproduzierbare Analysen, ohne riesige Rohdaten in Git einzuchecken.
+Diese Trennung erlaubt reproduzierbare Analysen, ohne riesige Rohdaten in Git einzuchecken. Falls ihr  den data Ordner vollständig benötigt, können wir diesen gerne noch nachreichen. 
 
 ---
 
@@ -89,7 +87,7 @@ Alle statistischen Auswertungen liegen in `notebooks/` und bauen logisch aufeina
 
 ## 3. Python-Umgebung und Tools
 
-Das Projekt wurde in einer lokalen Python-Umgebung mit Jupyter Notebooks entwickelt. Wegen der Datengröße war Performance entscheidend.
+Das Projekt wurde in einer lokalen Python-Umgebung mit Jupyter Notebooks entwickelt. Wegen der Datengrösse war Performance entscheidend.
 
 **Wichtigste Tools/Libraries:**
 - `polars` für DataFrame-Verarbeitung (Performance, speichereffizient)
@@ -109,9 +107,9 @@ Beim Arbeiten mit der vollen Monatsdatei kam es wiederholt zu Kernel-Crashes. Po
 
 Die Open-Transport-IST-Daten sind grundsätzlich in Tagesdateien verfügbar. Ein einzelner Tag ist jedoch oft wenig aussagekräftig, da Störungen, Wetter oder Events den Tag stark verzerren können. Deshalb entschieden wir uns für eine Monatsanalyse (September), um stabilere Muster zu erhalten.
 
-### 4.2 Problem: Rohdaten sind zu groß
+### 4.2 Problem: Rohdaten sind zu gross
 
-Der Download und die Verarbeitung des gesamten Monats im Rohformat wären sehr speicher- und rechenintensiv (Größenordnung > 50 GB). Auf normaler Laptop-Hardware war das nicht zuverlässig handhabbar.
+Der Download und die Verarbeitung des gesamten Monats im Rohformat wären sehr speicher- und rechenintensiv (Grössenordnung > 50 GB). Auf normaler Laptop-Hardware war das nicht zuverlässig handhabbar.
 
 ### 4.3 Lösung: ZIP → Parquet Pipeline
 
@@ -124,20 +122,20 @@ Um die Daten effizient zu speichern und schneller analysieren zu können, haben 
    → eine Monatsdatei als Parquet (deutlich kleiner, schneller zu laden)
 
 **Warum Parquet?**
-- deutlich kleinere Dateigröße dank Kompression
+- deutlich kleinere Dateigrösse dank Kompression
 - schnelleres Einlesen
 - spaltenorientiertes Arbeiten (nur benötigte Spalten werden geladen)
 
 ### 4.4 Erste Notebook-Phase und Ressourcenproblem
 
 Zu Beginn sind wir inhaltlich der Vorlesungsstruktur gefolgt (EDA → Deskriptiv → Inferenz → Tests → Regression). In dieser Phase kam es mehrfach zu Kernel-Abstürzen durch:
-- zu große Tabellen im RAM
+- zu grosse Tabellen im RAM
 - speicherintensive Joins/Gruppierungen/Plots
 - begrenzte Hardware-Ressourcen
 
 ### 4.5 Scope-Entscheidung: “Trains only”
 
-Um das Projekt robust abschließen zu können, entschieden wir uns, die Analyse auf Zugverbindungen zu beschränken. Dadurch sank die Datenmenge auf ca. 4.5 Mio. Zeilen, was auf normaler Hardware gut analysierbar war, ohne das Thema inhaltlich zu verlieren.
+Um das Projekt robust abschliessen zu können, entschieden wir uns, die Analyse auf Zugverbindungen zu beschränken. Dadurch sank die Datenmenge auf ca. 4.5 Mio. Zeilen, was auf normaler Hardware gut analysierbar war, ohne das Thema inhaltlich zu verlieren.
 
 Ab diesem Punkt wurden zentrale Teile der Notebooks neu aufgesetzt und die finalen Resultate basieren auf der “Trains only”-Datenbasis.
 
@@ -161,7 +159,7 @@ Ab diesem Punkt wurden zentrale Teile der Notebooks neu aufgesetzt und die final
 #### `N02.ipynb` – Deskriptive Statistik
 - Verteilungen von Ankunfts-/Abfahrtsverspätungen
 - Kennzahlen, Visualisierungen
-- Ausreißeranalyse nach Tukey/IQR
+- Ausreisseranalyse nach Tukey/IQR
 
 #### `N03.ipynb` – Zusammenhänge / Korrelation (Trains only)
 - Feature Engineering (z.B. Stunde, Pünktlichkeit)
@@ -184,13 +182,13 @@ Ab diesem Punkt wurden zentrale Teile der Notebooks neu aufgesetzt und die final
 #### `N07.ipynb` – H11: Einfluss der Tageszeit
 - Einteilung in Zeitfenster
 - globaler Gruppenvergleich mit Kruskal–Wallis
-- Effektgröße Epsilon-Squared (ε²), weil sie zu einem rank-basierten Test passt und die Stärke des Effekts (nicht nur Signifikanz) quantifiziert
+- Effektgrösse Epsilon-Squared (ε²), weil sie zu einem rank-basierten Test passt und die Stärke des Effekts (nicht nur Signifikanz) quantifiziert
 - Post-hoc paarweise Tests (Mann–Whitney) mit Korrektur
 
 #### `N09.ipynb` – A/B-Vergleich (z.B. Zürich HB vs St. Gallen)
 - Vergleich zweier Bahnhöfe
 - Welch t-Test + Mann–Whitney U
-- Effektgrößen und Bootstrap zur Differenzabschätzung
+- Effektgrössen und Bootstrap zur Differenzabschätzung
 
 #### `N06.ipynb` – Urban vs. Rural & Geo-Analyse
 - Join von Stationsdaten mit Gemeinde-/Boundary-Daten (`data/external/`)
@@ -253,14 +251,14 @@ Unser Vorgehen war iterativ:
 | Notebook | Thema / Statistische Analyse | Teammitglieder |
 | :--- | :--- | :--- |
 | **N01_EDA.ipynb** | Data Engineering, Cleaning & Filterung (Trains only) | Gemeinsam |
-| **N02.ipynb** | Deskriptive Statistik & Ausreißeranalyse (Tukey) | Elia | 
+| **N02.ipynb** | Deskriptive Statistik & Ausreisseranalyse (Tukey) | Elia | 
 | **N03.ipynb** | Korrelationsanalyse (Spearman) & Heatmaps | Leon |
 | **N04.ipynb** | Wahrscheinlichkeitstheorie, ECDF & Law of Large Numbers | Bruno|
 | **N05.ipynb** | Inferenzstatistik: Konfidenzintervalle & Bootstrapping | ELia |
 | **N06.ipynb** | Urban vs. Rural Analyse & Geo-Matching (BFS-Daten) | Elia |
 | **N07.ipynb** | Hypothesentest Tageszeit (Kruskal-Wallis & Mann-Whitney) | Leon |
 | **N08.ipynb** | Experimentelle Analysen (Chi²-Tests & OLS-Entwürfe) | Elia |
-| **N09.ipynb** | A/B-Vergleich (Zürich vs. St. Gallen) & Effektgrößen | Bruno |
+| **N09.ipynb** | A/B-Vergleich (Zürich vs. St. Gallen) & Effektgrössen | Bruno |
 | **N10.ipynb** | Lineare Regression (Transformationen & Diagnoseplots) | Bruno |
 | **N11.ipynb** | Multiple Regression, Interaktionseffekte & VIF-Check | Bruno |
 | **bahnhof-mining.ipynb** | Explorative Analyse der Bahnhof-Strukturen | Leon |
