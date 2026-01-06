@@ -263,3 +263,13 @@ Unser Vorgehen war iterativ:
 | **N11.ipynb** | Multiple Regression, Interaktionseffekte & VIF-Check | Bruno |
 | **bahnhof-mining.ipynb** | Explorative Analyse der Bahnhof-Strukturen | Leon |
 | **bahnhof-mining-hypothese.ipynb**| Prüfung der "Puffer-Hypothese" ($\Delta$ Delay Analyse) | Leon |
+
+## 8. Methodische Zusatzdokumentation
+
+Zur vollständigen Nachvollziehbarkeit des Projekts sind folgende begleitende Dokumente im Repository enthalten:
+
+- **[Fallnotiz](Fallnotiz.md)**  
+  Dokumentation zentraler Daten-, Scope- und Modellentscheidungen inkl. Verweis auf die jeweiligen Notebooks.
+
+- **[Table of Prompts](Table_of_Prompts.md)**  
+  Transparente Übersicht über den Einsatz von LLM-Unterstützung im Projektverlauf.

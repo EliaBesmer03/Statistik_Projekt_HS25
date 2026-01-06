@@ -3,10 +3,10 @@ Für die Generierung und Anlayse der Antworten wurde das Sprachmodell GPT-5 eing
 
 ## N01_EDA.ipynb (Data Engineering / Cleaning)
 
-- „Ich habe eine große Parquet-Datei. Wie lade ich sie in **Polars** möglichst speicherschonend (scan_parquet vs read_parquet) und filtere direkt nur die relevanten Zeilen/Spalten?“
+- „Ich habe eine grosse Parquet-Datei. Wie lade ich sie in **Polars** möglichst speicherschonend (scan_parquet vs read_parquet) und filtere direkt nur die relevanten Zeilen/Spalten?“
 - „Wie filtere ich in Polars nur **Zugverbindungen** aus dem IST-Datensatz?“
 - „Wie erstelle ich in Polars eine **Missing-Value-Übersicht** pro Spalte mit Anzahl und Prozent und gebe sie als Tabelle aus?“
-- „Wie mache ich eine **Missing-Values Heatmap** mit seaborn aus einem Polars-DataFrame, ohne alles zu groß zu machen (Sampling)?“
+- „Wie mache ich eine **Missing-Values Heatmap** mit seaborn aus einem Polars-DataFrame, ohne alles zu gross zu machen (Sampling)?“
 - „Ich habe `delay_arrival_s` und `delay_departure_s` in Sekunden. Wie erstelle ich `delay_min` in Minuten und behandle negative/extreme Werte sinnvoll?“
 - „Welche Arten fehlender Werte treten in IST-Daten typischerweise auf und wie werden sie konzeptionell unterschieden?“
 - „Welche robuste Imputationsstrategie eignet sich für fehlende Delay-Werte mit Median pro Linie oder Betreiber und einem globalen Fallback, und wie setzt man das in Polars um?“
@@ -20,9 +20,9 @@ Für die Generierung und Anlayse der Antworten wurde das Sprachmodell GPT-5 eing
 
 ## N02.ipynb (Deskriptive Statistik)
 
-- „Wie berechne ich für `delay_min` die wichtigsten **Lage- und Streuungsmaße** und stelle sie kompakt als Tabelle dar?“
+- „Wie berechne ich für `delay_min` die wichtigsten **Lage- und Streuungsmasse** und stelle sie kompakt als Tabelle dar?“
 - „Wie kann ich in Polars robust die **Quantile** (0.25/0.5/0.75/0.9/0.99) berechnen?“
-- „Wie implementiere ich die **Tukey-IQR Ausreißerregel** (mild/extreme) und zähle Ausreißer-Anteile?“
+- „Wie implementiere ich die **Tukey-IQR Ausreisserregel** (mild/extreme) und zähle Ausreisser-Anteile?“
 - „Wie mache ich Histogramme/Boxplots bei Millionen Zeilen ohne Kernel-Crash?“
 - „Wie erstelle ich einen Plot mit Histogramm und vertikalen Referenzlinien für Median und Mittelwert inklusive Beschriftung?“
 - „Wie erstelle ich eine **ECDF** (Empirical CDF) für Verspätungen und stelle sie sauber dar?“
@@ -45,7 +45,7 @@ Für die Generierung und Anlayse der Antworten wurde das Sprachmodell GPT-5 eing
 
 ## N04.ipynb (Wahrscheinlichkeitstheorie am Datensatz)
 
-- „Wie kann ich das **Gesetz der großen Zahlen** im Datensatz visualisieren, etwa über einen kumulativen Mittelwert über Zeit oder Index?“
+- „Wie kann ich das **Gesetz der grossen Zahlen** im Datensatz visualisieren, etwa über einen kumulativen Mittelwert über Zeit oder Index?“
 - „Wie plotte ich ECDFs für zwei Gruppen (Rush-Hour vs Off-Peak) und vergleiche sie in einem Plot?“
 - „Wie kann ich aus dem Datensatz eine Ereignisvariable definieren (z.B. ‘> 5 Min verspätet’) und **Relative Risk / Odds Ratio** berechnen?“
 - „Wie mache ich einen einfachen Poisson/Verteilungs-Exkurs passend zu Verspätungsereignissen (Counts pro Zeitfenster)?“
@@ -61,7 +61,7 @@ Für die Generierung und Anlayse der Antworten wurde das Sprachmodell GPT-5 eing
 - „Wie implementiere ich **Bootstrapping** für den Median der Verspätung (z.B. 10’000 Resamples) und gebe ein 95%-CI aus?“
 - „Wie visualisiere ich die Bootstrap-Verteilung und markiere ein Konfidenzintervall im Plot?“
 - „Was unterscheidet Punktschätzer, Standardfehler und Konfidenzintervalle?“
-- „Welche bekannten Probleme treten bei Signifikanztests mit sehr großen Stichproben auf?“
+- „Welche bekannten Probleme treten bei Signifikanztests mit sehr grossen Stichproben auf?“
 
 ---
 
@@ -93,7 +93,7 @@ Für die Generierung und Anlayse der Antworten wurde das Sprachmodell GPT-5 eing
 ### Netzknoten / Verkehrsaufkommen vs Pünktlichkeit
 
 - „Wie aggregiere ich pro Gemeinde/Bahnhof `n_trains` (Verkehrsaufkommen) und `mean_delay` und plotte ‘Aufkommen vs Verspätung’ als Scatter (log-scale für Aufkommen)?“
-- „Wie bilde ich `log_n_trains = log(1+n_trains)` und schätze anschließend ein OLS-Modell `mean_delay ~ log_n_trains`, und welche Outputs sollte ich zur Modellbewertung betrachten?“
+- „Wie bilde ich `log_n_trains = log(1+n_trains)` und schätze anschliessend ein OLS-Modell `mean_delay ~ log_n_trains`, und welche Outputs sollte ich zur Modellbewertung betrachten?“
 - „Wie mache ich einen Plot mit `sns.regplot`, aber mit transparenten Punkten und farbiger Regressionslinie?“
 - „Welche theoretischen Zusammenhänge werden zwischen Verkehrsaufkommen und Verspätungen diskutiert?“
 
@@ -109,7 +109,7 @@ Für die Generierung und Anlayse der Antworten wurde das Sprachmodell GPT-5 eing
 
 - „Ich will Tageszeit in sinnvolle Zeitbänder einteilen (z.B. 0–5, 6–9, 10–15, 16–19, 20–23). Wie mache ich das in Pandas/Polars?“
 - „Meine Delay-Daten sind nicht normalverteilt. Wie teste ich Unterschiede zwischen mehreren Zeitbändern mit **Kruskal–Wallis**?“
-- „Wie wird die Effektgröße Epsilon-Squared für Kruskal–Wallis berechnet und interpretiert?“
+- „Wie wird die Effektgrösse Epsilon-Squared für Kruskal–Wallis berechnet und interpretiert?“
 - „Nach Kruskal–Wallis: Wie mache ich paarweise **Mann–Whitney U**-Tests für alle Zeitband-Paare und korrigiere Multiple Testing?“
 - „Wie erstelle ich eine Ergebnis-Tabelle für paarweise Tests mit Paar, p_raw, p_adj, Signifikanz und Effekt-Richtung?“
 - „Wie visualisiere ich die Zeitband-Unterschiede: Boxplot nach Zeitband + Punktemit Sampling?“
@@ -123,9 +123,9 @@ Für die Generierung und Anlayse der Antworten wurde das Sprachmodell GPT-5 eing
 
 - „Ich habe `is_punctual` und Kategorien wie `weekday` oder `time_band`. Wie mache ich eine Kreuztabelle und einen **Chi-Quadrat-Test** für Unabhängigkeit?“
 - „Ich teste mehrere Gruppenvergleiche (viele Kategorien). Wie mache ich eine **Multiple-Testing-Korrektur** für viele p-Werte?“
-- „Wie berechne ich eine Effektgröße zum Chi²-Test und interpretiere sie?“
+- „Wie berechne ich eine Effektgrösse zum Chi²-Test und interpretiere sie?“
 - „Ich möchte trotzdem ein OLS ausprobieren: `delay_min ~ hour + C(weekday)`. Wie setze ich das auf und welche Diagnoseplots brauche ich?“
-- „Wie kann ich Variablen transformieren um Ausreißer-Effekt zu reduzieren?“
+- „Wie kann ich Variablen transformieren um Ausreisser-Effekt zu reduzieren?“
 - „Welche diagnostischen Kriterien sprechen gegen den Einsatz von OLS-Modellen?“
 
 ---
@@ -134,10 +134,10 @@ Für die Generierung und Anlayse der Antworten wurde das Sprachmodell GPT-5 eing
 
 - „Ich will die Ankunftsverspätung zweier Bahnhöfe vergleichen (Zürich HB vs St. Gallen). Wie filtere ich den Datensatz sauber nach `HALTESTELLEN_NAME`?“
 - „Welche Tests eignen sich für den Vergleich zweier Gruppen bei ungleicher Varianz und nicht-normalen Verteilungen, und welche Voraussetzungen haben sie?“
-- „Wie berechne ich eine Effektgröße für den Bahnhofvergleich?“
+- „Wie berechne ich eine Effektgrösse für den Bahnhofvergleich?“
 - „Wie mache ich ein **Bootstrap** (10’000) für die Differenz der Mittelwerte/Mediane inkl. 95%-CI?“
 - „Wie visualisiere ich die Verteilungen beider Bahnhöfe vergleichbar, etwa mit überlagerten Histogrammen oder Dichtekurven und zusätzlichen Boxplots?“
-- „Wie stelle ich im Plot sicher, dass Ausreißer die Skala nicht sprengen? “
+- „Wie stelle ich im Plot sicher, dass Ausreisser die Skala nicht sprengen? “
 
 ---
 
@@ -176,7 +176,7 @@ Für die Generierung und Anlayse der Antworten wurde das Sprachmodell GPT-5 eing
 ### Delta-Delay Definition
 
 - „Ich möchte messen, ob an einem Bahnhof Verspätung eher **abgebaut** oder **aufgebaut** wird. Ist `delta_delay_min = (delay_departure_s - delay_arrival_s)/60` eine sinnvolle Definition? Welche Fallstricke gibt es?“
-- „Wie filtere ich unrealistische Werte von `delta_delay_min` (z.B. extrem große Sprünge) und setze sinnvolle Grenzen?“
+- „Wie filtere ich unrealistische Werte von `delta_delay_min` (z.B. extrem grosse Sprünge) und setze sinnvolle Grenzen?“
 - „Wie aggregiere ich pro Bahnhof `mean_delta` und `n_obs` für den ganzen Monat?“
 - „Wie setze ich eine Mindestanzahl Beobachtungen (`MIN_OBS_MONTH`, `MIN_OBS_DAY`), damit kleine Stationen keine Verzerrung erzeugen?“
 
@@ -184,7 +184,7 @@ Für die Generierung und Anlayse der Antworten wurde das Sprachmodell GPT-5 eing
 
 - „Ich habe `switzerland.geojson`. Wie zeichne ich die Schweiz-Grenze in Matplotlib als Basemap?“
 - „Mein GeoJSON hat eine verschachtelte Struktur. Wie schreibe ich eine robuste Schleife, die sowohl Polygon als auch MultiPolygon plottet?“
-- „Wie mache ich einen Scatter-Plot der Stationen (lon/lat), wobei die Punktgröße von `n_obs` abhängt?“
+- „Wie mache ich einen Scatter-Plot der Stationen (lon/lat), wobei die Punktgrösse von `n_obs` abhängt?“
 - „Ich will eine diverging Colormap (blau=negativ=Puffer, rot=positiv=Verspätung). Welche Colormap ist passend und wie setze ich `vmin=-VMAX`, `vmax=VMAX`?“
 - „Wie erstelle ich eine Colorbar mit Label ‘Delta (Minuten) – Blau=Puffer | Rot=Verspätung’ und setze Titel/Achsen sauber?“
 - „Wie setze ich feste Achsen-Limits für CH, damit alle Plots dieselbe Skala haben?“
@@ -202,7 +202,7 @@ Für die Generierung und Anlayse der Antworten wurde das Sprachmodell GPT-5 eing
 
 ## bahnhof-mining-hypothese.ipynb (H12 Puffer-Effekt: Hypothese + Korrelation/Regression)
 
-- „Ich habe pro Bahnhof `mean_delta_delay` und `anzahl_zuege`. Wie teste ich, ob größere Bahnhöfe eher Verspätung abbauen?“
+- „Ich habe pro Bahnhof `mean_delta_delay` und `anzahl_zuege`. Wie teste ich, ob grössere Bahnhöfe eher Verspätung abbauen?“
 - „Welche Korrelation eignet sich bei Nichtlinearität und Heavy Tails besser, Pearson oder Spearman, und wie interpretiert man die Kennwerte korrekt?“
 - „Wie baue ich einen Scatter-Plot: x=Anzahl Züge (log-Skala), y=Mean Delta Delay, inkl. Trendline und guter Beschriftung?“
 - „Wie annotiere ich die wichtigsten Bahnhöfe im Plot (z.B. Top-10 nach `anzahl_zuege`) mit Namen (`HALTESTELLEN_NAME`)?“
