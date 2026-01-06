@@ -254,7 +254,7 @@ Unser Vorgehen war iterativ:
 | **N02.ipynb** | Deskriptive Statistik & Ausreisseranalyse (Tukey) | Elia | 
 | **N03.ipynb** | Korrelationsanalyse (Spearman) & Heatmaps | Leon |
 | **N04.ipynb** | Wahrscheinlichkeitstheorie, ECDF & Law of Large Numbers | Bruno|
-| **N05.ipynb** | Inferenzstatistik: Konfidenzintervalle & Bootstrapping | ELia |
+| **N05.ipynb** | Inferenzstatistik: Konfidenzintervalle & Bootstrapping | Elia |
 | **N06.ipynb** | Urban vs. Rural Analyse & Geo-Matching (BFS-Daten) | Elia |
 | **N07.ipynb** | Hypothesentest Tageszeit (Kruskal-Wallis & Mann-Whitney) | Leon |
 | **N08.ipynb** | Experimentelle Analysen (Chi²-Tests & OLS-Entwürfe) | Elia |
