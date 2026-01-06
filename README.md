@@ -254,16 +254,16 @@ Unser Vorgehen war iterativ:
 
 | Notebook | Thema / Statistische Analyse | Teammitglieder |
 | :--- | :--- | :--- |
-| **N01_EDA.ipynb** | Data Engineering, Cleaning & Filterung (Trains only) | |
-| **N02.ipynb** | Deskriptive Statistik & Ausreißeranalyse (Tukey) | |
-| **N03.ipynb** | Korrelationsanalyse (Spearman) & Heatmaps | |
-| **N04.ipynb** | Wahrscheinlichkeitstheorie, ECDF & Law of Large Numbers | |
-| **N05.ipynb** | Inferenzstatistik: Konfidenzintervalle & Bootstrapping | |
-| **N06.ipynb** | Urban vs. Rural Analyse & Geo-Matching (BFS-Daten) | |
-| **N07.ipynb** | Hypothesentest Tageszeit (Kruskal-Wallis & Mann-Whitney) | |
-| **N08.ipynb** | Experimentelle Analysen (Chi²-Tests & OLS-Entwürfe) | |
-| **N09.ipynb** | A/B-Vergleich (Zürich vs. St. Gallen) & Effektgrößen | |
-| **N10.ipynb** | Lineare Regression (Transformationen & Diagnoseplots) | |
-| **N11.ipynb** | Multiple Regression, Interaktionseffekte & VIF-Check | |
-| **bahnhof-mining.ipynb** | Explorative Analyse der Bahnhof-Strukturen | |
-| **bahnhof-mining-hypothese.ipynb**| Prüfung der "Puffer-Hypothese" ($\Delta$ Delay Analyse) | |
+| **N01_EDA.ipynb** | Data Engineering, Cleaning & Filterung (Trains only) | Gemeinsam |
+| **N02.ipynb** | Deskriptive Statistik & Ausreißeranalyse (Tukey) | Elia | 
+| **N03.ipynb** | Korrelationsanalyse (Spearman) & Heatmaps | Leon |
+| **N04.ipynb** | Wahrscheinlichkeitstheorie, ECDF & Law of Large Numbers | Bruno|
+| **N05.ipynb** | Inferenzstatistik: Konfidenzintervalle & Bootstrapping | ELia |
+| **N06.ipynb** | Urban vs. Rural Analyse & Geo-Matching (BFS-Daten) | Elia |
+| **N07.ipynb** | Hypothesentest Tageszeit (Kruskal-Wallis & Mann-Whitney) | Leon |
+| **N08.ipynb** | Experimentelle Analysen (Chi²-Tests & OLS-Entwürfe) | Elia |
+| **N09.ipynb** | A/B-Vergleich (Zürich vs. St. Gallen) & Effektgrößen | Bruno |
+| **N10.ipynb** | Lineare Regression (Transformationen & Diagnoseplots) | Bruno |
+| **N11.ipynb** | Multiple Regression, Interaktionseffekte & VIF-Check | Bruno |
+| **bahnhof-mining.ipynb** | Explorative Analyse der Bahnhof-Strukturen | Leon |
+| **bahnhof-mining-hypothese.ipynb**| Prüfung der "Puffer-Hypothese" ($\Delta$ Delay Analyse) | Leon |
