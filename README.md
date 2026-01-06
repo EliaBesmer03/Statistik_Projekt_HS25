@@ -268,7 +268,7 @@ Unser Vorgehen war iterativ:
 
 Zur vollständigen Nachvollziehbarkeit des Projekts sind folgende begleitende Dokumente im Repository enthalten:
 
-- **[Fallnotiz](Fallnotiz.md)**  
+- **[Fallnotiz](fallnotiz.md)**  
   Dokumentation zentraler Daten-, Scope- und Modellentscheidungen inkl. Verweis auf die jeweiligen Notebooks.
 
 - **[Table of Prompts](Table_of_Prompts.md)**  
