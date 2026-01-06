@@ -1,4 +1,5 @@
 # Table of Prompts
+Für die Generierung und Anlayse der Antworten wurde das Sprachmodell GPT-5 eingesetzt. 
 
 ## N01_EDA.ipynb (Data Engineering / Cleaning)
 
